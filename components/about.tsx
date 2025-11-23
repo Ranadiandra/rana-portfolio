@@ -37,7 +37,7 @@ export default function About() {
             <div>
               <div className="w-64 h-64 mx-auto md:mx-0 bg-gradient-to-br from-accent to-primary rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Avatar</span>
+                  <img src="/pasfoto.jpg" alt="My Avatar" className="w-full h-full object-cover"/>
                 </div>
               </div>
             </div>

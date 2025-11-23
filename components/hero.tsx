@@ -37,8 +37,8 @@ export default function Hero() {
           </h2>
 
           <p className="text-lg sm:text-xl text-foreground/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-            I build scalable web applications from front to back. Passionate about creating elegant solutions to complex
-            problems.
+            I build scalable web applications from front to back. Passionate about creating efficient, reliable, and user-centered digital experiences. 
+            Explore my work and professional journey
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -40,13 +40,22 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
+    
+    const res = await fetch ("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+
+    if(res.ok){
+      setIsSubmitted(true)
       setFormData({ name: "", email: "", message: "" })
-      setIsSubmitted(false)
-    }, 3000)
+      setTimeout(() => setIsSubmitted(false), 3000)
+    }else{
+      alert("Failed to send message")
+    }
   }
 
   return (
@@ -139,13 +148,13 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:rana@example.com"
+                  href="mailto:ranadiandra.0603@gmail.com"
                   className="flex items-center gap-4 p-4 bg-secondary/50 border border-border rounded-lg hover:border-accent transition-colors group"
                 >
                   <Mail className="text-accent group-hover:scale-110 transition-transform" size={24} />
                   <div>
                     <p className="text-sm text-foreground/60">Email</p>
-                    <p className="text-foreground font-medium">rana@example.com</p>
+                    <p className="text-foreground font-medium">ranadiandra.0603@gmail.com</p>
                   </div>
                 </a>
 
@@ -163,7 +172,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Ranadiandra"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-secondary/50 border border-border rounded-lg hover:border-accent transition-colors group"
@@ -171,7 +180,7 @@ export default function Contact() {
                   <Github className="text-accent group-hover:scale-110 transition-transform" size={24} />
                   <div>
                     <p className="text-sm text-foreground/60">GitHub</p>
-                    <p className="text-foreground font-medium">github.com/rana</p>
+                    <p className="text-foreground font-medium">github.com/Ranadiandra</p>
                   </div>
                 </a>
               </div>

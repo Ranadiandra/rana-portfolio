@@ -8,7 +8,7 @@ export default function Footer() {
           <p className="text-foreground/60 text-sm">© {currentYear} Rana Diandra Zahra | Fullstack Developer</p>
           <div className="flex gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Ranadiandra"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium"
@@ -24,10 +24,20 @@ export default function Footer() {
               LinkedIn
             </a>
             <a
-              href="mailto:rana@example.com"
+              href="mailto:ranadiandra.0603@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium"
             >
               Email
+            </a>
+            <a
+              href="https://www.instagram.com/diarana.z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium"
+            >
+              Instagram
             </a>
           </div>
         </div>
