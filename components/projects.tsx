@@ -2,14 +2,16 @@
 
 import { useEffect, useRef, useState } from "react"
 import { ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with product catalog, shopping cart, and secure checkout.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    demo: "#",
-    github: "#",
+    title: "Smart Traffic Quiz",
+    description: "An educational traffic safety game built with React, designed to teach players the importance of following road rules through interactive challenges and quizzes.",
+    tech: ["React", "Javascript", "HTML5", "CSS"],
+    demo: "https://smart-traffic-zeta.vercel.app",
+    github: "https://github.com/Ranadiandra/smart-traffic.git",
+    image: "/smart-traffic.png"
   },
   {
     title: "Task Management App",
@@ -65,7 +67,7 @@ export default function Projects() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-accent">Projects</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <div
                 key={project.title}
@@ -76,8 +78,13 @@ export default function Projects() {
                   transitionDelay: isVisible ? `${idx * 100}ms` : "0ms",
                 }}
               >
-                <div className="h-48 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                  <span className="text-muted-foreground">Project Image</span>
+                <div className="h-48  w-full relative">
+                  <Image
+                    src={project.image || "/placeholder.png"}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="p-6">
@@ -96,6 +103,8 @@ export default function Projects() {
                   <div className="flex gap-4">
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground font-medium rounded-lg hover:bg-accent/90 transition-colors"
                     >
                       Live Demo
@@ -103,6 +112,8 @@ export default function Projects() {
                     </a>
                     <a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 border border-accent text-accent font-medium rounded-lg hover:bg-accent/10 transition-colors"
                     >
                       GitHub
