@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.className} antialiased bg-background text-foreground`}>
         {children}
-        {/* <Analytics /> */}
+        <Analytics />
       </body>
     </html>
   )
